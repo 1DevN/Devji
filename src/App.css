@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  @apply bg-white p-4 shadow-lg fixed top-0 left-0 w-full z-10;
+}
+.navbar-container {
+  @apply container mx-auto flex justify-between items-center p-4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-links {
+  @apply  md:flex space-x-16;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link {
+  @apply text-black text-2xl font-semibold;
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-link:hover {
+  @apply text-gray-400 bg-gray-800 rounded-full;
+  z-index: 2;
+}
+
+
+
+/* HomeLayout.css */
+
+.home-container {
+  @apply min-h-screen bg-gray-100 flex items-center justify-center text-center p-6;
+  @apply bg-gradient-to-r from-black bg-slate-900 p-8 shadow-lg;
+}
+
+.content-container {
+  @apply bg-gradient-to-r from-indigo-900 bg-black p-8 shadow-lg max-w-xl mx-auto max-h-96;
+}
+
+.photo-section {
+  @apply mb-6;
+}
+
+.profile-photo {
+  @apply w-48 h-48 rounded-full mx-auto object-cover;
+}
+
+.heading {
+  @apply text-4xl font-bold text-orange-100 mb-4;
+}
+
+.description {
+  @apply text-lg text-orange-50;
+}
+
+.intro-section {
+  @apply mb-12 text-left;
+}
+
+.intro-heading {
+  @apply text-5xl font-mono text-white mb-4;
+    border-right: 1px solid;
+  margin-left: 0; /* Set to 0 if you want it fully left-aligned */
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+
+.intro-description {
+  @apply text-lg font-mono text-gray-200;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.skills-section {
+  @apply bg-slate-600 rounded-xl shadow-lg p-16 max-w-screen-xl w-11/12;
+}
+
+.skills-heading {
+  @apply text-4xl font-mono text-white mb-16;
+}
+
+.skills-list {
+  @apply list-none p-0 m-0  ;
+  display:flex;
+  flex-wrap:wrap;
+  padding: 1 rem;
+  gap: 56px;
+  justify-content: center;
+  
+}
+
+.skill-item {
+  @apply text-center font-mono text-gray-800 py-2 px-3 mb-2 bg-gray-100 rounded ;
+  box-sizing: border-box;
+}
+
+.circular-progress-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.circular-progress-container .CircularProgressbar {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.inner-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px; /* Adjust size of inner circle */
+  height: 110px;
+  border-radius: 90%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.skill-img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 70%;
 }
 
-.App-link {
-  color: #61dafb;
+.img{
+  width: 400px;
+  height: 350px;
+  border-radius: 9999px;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  position:initial;
+  margin-bottom: 20px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
